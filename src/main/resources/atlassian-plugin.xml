@@ -5,33 +5,36 @@
         <vendor name="${project.organization.name}" url="${project.organization.url}" />
         <param name="plugin-icon">images/pluginIcon.png</param>
         <param name="plugin-logo">images/pluginLogo.png</param>
-	<param name="atlassian-data-center-compatible">true</param>
+	    <param name="atlassian-data-center-compatible">true</param>
     </plugin-info>
 
     <xhtml-macro name="markdown"
-                 class="com.atlassian.plugins.confluence.markdown.MarkdownMacro"
+                 class="org.breeswish.confluence.markdown.MarkdownMacro"
                  key="markdown"
-                 icon="/download/resources/com.atlassian.plugins.confluence.markdown.confluence-markdown-macro/images/pluginIcon.png"
+                 icon="/download/resources/org.breeswish.confluence.markdown.confluence-markdown-macro/images/pluginIcon.png"
                  documentation-url="https://spec.commonmark.org/0.28/">
         <category name="formatting"/>
         <parameters>
         </parameters>
     </xhtml-macro>
+
     <macro name="markdown"
-           class="com.atlassian.plugins.confluence.markdown.MarkdownMacro"
+           class="org.breeswish.confluence.markdown.MarkdownMacro"
            key="markdown.wiki"
-           icon="/download/resources/com.atlassian.plugins.confluence.markdown.confluence-markdown-macro/images/pluginIcon.png"
+           icon="/download/resources/org.breeswish.confluence.markdown.confluence-markdown-macro/images/pluginIcon.png"
            documentation-url="https://spec.commonmark.org/0.28/">
         <category name="formatting"/>
         <parameters>
         </parameters>
     </macro>
+
     <resource type="i18n" name="markdown" location="markdownproperties/markdown"/>
     <resource type="download" name="images/" key="images" location="images/"/>
 
-    <web-resource key="highlightjs" name="Highlight.js" >
+    <web-resource key="resource" name="Confluence Markdown Macro Resources">
+        <dependency>com.atlassian.auiplugin:ajs</dependency>
         <resource type="download" name="highlight.min.js" location="js/highlight.min.js" />
-        <resource type="download" name="highlight.min.css" location="css/highlight.min.css" />
+        <resource type="download" name="highlight.css" location="css/highlight.css" />
     </web-resource>
 
 </atlassian-plugin>
