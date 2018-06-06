@@ -68,7 +68,7 @@ public class MarkdownMacro extends BaseMacro implements Macro {
         ));
 
         String scriptBody = "<script>\n" +
-                "AJS.$('[data-markdown-macro] code').each(function(i, block) {\n" +
+                "AJS.$('[data-markdown-macro] pre code').each(function(i, block) {\n" +
                 "    hljs.highlightBlock(block);\n" +
                 "  });\n" +
                 "</script>";
