@@ -12,15 +12,12 @@ import com.atlassian.renderer.v2.macro.BaseMacro;
 import com.atlassian.renderer.v2.macro.MacroException;
 import com.atlassian.webresource.api.assembler.PageBuilderService;
 import com.vladsch.flexmark.ast.Node;
-import com.vladsch.flexmark.ext.anchorlink.AnchorLinkExtension;
 import com.vladsch.flexmark.ext.autolink.AutolinkExtension;
-import com.vladsch.flexmark.ext.definition.DefinitionExtension;
 import com.vladsch.flexmark.ext.footnotes.FootnoteExtension;
 import com.vladsch.flexmark.ext.gfm.strikethrough.StrikethroughSubscriptExtension;
 import com.vladsch.flexmark.ext.gfm.tasklist.TaskListExtension;
-import com.vladsch.flexmark.ext.ins.InsExtension;
 import com.vladsch.flexmark.ext.tables.TablesExtension;
-import com.vladsch.flexmark.ext.wikilink.WikiLinkExtension;
+import com.vladsch.flexmark.ext.yaml.front.matter.YamlFrontMatterExtension;
 import com.vladsch.flexmark.html.HtmlRenderer;
 import com.vladsch.flexmark.parser.Parser;
 import com.vladsch.flexmark.superscript.SuperscriptExtension;
@@ -57,13 +54,10 @@ public class MarkdownMacro extends BaseMacro implements Macro {
         options.set(Parser.EXTENSIONS, Arrays.asList(
                 TablesExtension.create(),
                 StrikethroughSubscriptExtension.create(),
-                InsExtension.create(),
                 TaskListExtension.create(),
                 FootnoteExtension.create(),
-                WikiLinkExtension.create(),
-                DefinitionExtension.create(),
-                AnchorLinkExtension.create(),
                 AutolinkExtension.create(),
+                YamlFrontMatterExtension.create(),
                 SuperscriptExtension.create()
         ));
 
